@@ -30,7 +30,8 @@ def fetch_weather():
     data = response.json()
     temperature= data['current']['temp_c']
     city_name= data['location']['name']
-    weather_label.config(text=f"Temperature: {temperature}°C\nCity: {city_name}")
+    country = data['location']['country']
+    weather_label.config(text=f"Temperature: {temperature}°C\nCity: {city_name}\nCountry: {country}")
 
 fetch_button.config(command=fetch_weather)
 
